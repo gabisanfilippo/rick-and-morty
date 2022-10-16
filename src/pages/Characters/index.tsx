@@ -1,6 +1,7 @@
 import React from "react"
 import { useMediaQuery } from "react-responsive";
 import { HeaderDesktop } from "../../components/global/HeaderDesktop";
+import { HeaderMobile } from "../../components/global/HeaderMobile";
 
 export const Characters = () => {
   return (
@@ -8,7 +9,7 @@ export const Characters = () => {
       {useMediaQuery({ minWidth: 450 }) ? (
         <HeaderDesktop/>
       ) : (
-        <>olá</>
+        <HeaderMobile/>
       )}
     </>
   )
