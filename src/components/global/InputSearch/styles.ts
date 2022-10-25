@@ -7,7 +7,7 @@ interface IProps {
 export const Container = styled.div<IProps>`
   display: flex;
   border: ${({ border }) => (border ? border : "1px solid rgba(0, 0, 0, 0.5)")};
-  width: min-content;
+  width: 100%;
   border-radius: 8px;
   button {
     background-color: transparent;

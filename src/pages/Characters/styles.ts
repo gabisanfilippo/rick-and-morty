@@ -10,3 +10,10 @@ export const RickAndMorty = styled.div`
     height: 12.5rem;
   }
 `;
+
+export const FiltersContainer = styled.div`
+  display: flex;
+  .filter-width {
+    width: 16rem;
+  }
+`;

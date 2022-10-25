@@ -13,9 +13,11 @@ export const Characters = () => {
       <S.RickAndMorty>
         <img src={RickAndMorty} alt="Escrita 'Rick and Morty'" />
       </S.RickAndMorty>
-      <>
-        <InputSearch placeholder="Filter by name..." />
-      </>
+      <S.FiltersContainer>
+        <div className="filter-width">
+          <InputSearch placeholder="Filter by name..." />
+        </div>
+      </S.FiltersContainer>
     </>
   );
 }
