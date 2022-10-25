@@ -14,17 +14,40 @@ export const Characters = () => {
       <S.RickAndMorty>
         <img src={RickAndMorty} alt="Escrita 'Rick and Morty'" />
       </S.RickAndMorty>
-      <S.FiltersContainer>
-        <div className="filter-width">
-          <InputSearch placeholder="Filter by name..." />
-        </div>
-        <div className="filter-width">
-          <SelectArrow
-            name="species"
-            options={[{ label: "Species", value: "" }]}
-          />
-        </div>
-      </S.FiltersContainer>
+      {useMediaQuery({ minWidth: 1115 }) ? (
+        <S.FiltersContainer>
+          <div className="filter-width">
+            <InputSearch placeholder="Filter by name..." />
+          </div>
+          <div className="filter-width">
+            <SelectArrow
+              name="species"
+              options={[{ label: "Species", value: "" }]}
+            />
+          </div>
+          <div className="filter-width">
+            <SelectArrow
+              name="species"
+              options={[{ label: "Gender", value: "" }]}
+            />
+          </div>
+          <div className="filter-width">
+            <SelectArrow
+              name="species"
+              options={[{ label: "Status", value: "" }]}
+            />
+          </div>
+        </S.FiltersContainer>
+      ) : (
+        <S.FiltersMobile>
+          <div className="filter-width">
+            <InputSearch placeholder="Filter by name..." />
+          </div>
+          <div className="filter-width">
+            <InputSearch placeholder="Filter by name..." />
+          </div>
+        </S.FiltersMobile>
+      )}
     </>
   );
 }
