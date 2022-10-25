@@ -11,10 +11,17 @@ export const Container = styled.article`
     height: 100%;
   }
   .img-container{
-    background-color: red;
     width: 100%;
     height: 70%;
     overflow: hidden;
+  }
+  @media (max-width: 590px) {
+    width: 100%;
+    height: 20rem;
+    img{
+      height: auto;
+      width: 100%;
+    }
   }
 `;
 
