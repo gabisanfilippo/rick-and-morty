@@ -6,8 +6,29 @@ export const RickAndMorty = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow: hidden;
   img {
     height: 12.5rem;
+  }
+  button {
+    width: 100%;
+    background-color: var(--color-one);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    color: #2196f3;
+  }
+  @media (max-width: 650px) {
+    img {
+      height: 6.5rem;
+    }
   }
 `;
 

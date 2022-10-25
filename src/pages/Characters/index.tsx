@@ -6,6 +6,7 @@ import RickAndMorty from '../../assets/RickAndMorty.svg'
 import * as S from './styles'
 import { InputSearch } from "../../components/global/InputSearch";
 import { SelectArrow } from "../../components/global/SelectArrow";
+import { FilterWithModal } from "../../components/FilterWidthModal";
 
 export const Characters = () => {
   return (
@@ -44,7 +45,7 @@ export const Characters = () => {
             <InputSearch placeholder="Filter by name..." />
           </div>
           <div className="filter-width">
-            <InputSearch placeholder="Filter by name..." />
+            <FilterWithModal />
           </div>
         </S.FiltersMobile>
       )}
