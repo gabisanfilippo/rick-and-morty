@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
   :root{
     --white: #ffffff;
     --black: #000000;
+    --grey-placeholder: rgba(0, 0, 0, 0.5);
   }
 
   @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
