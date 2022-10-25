@@ -9,6 +9,7 @@ export const Container = styled.div<IProps>`
   border: ${({ border }) => (border ? border : "1px solid rgba(0, 0, 0, 0.5)")};
   width: 100%;
   border-radius: 8px;
+  height: 3.5rem;
   button {
     background-color: transparent;
     border: none;

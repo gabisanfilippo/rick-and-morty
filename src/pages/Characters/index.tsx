@@ -5,6 +5,7 @@ import { HeaderMobile } from "../../components/global/HeaderMobile";
 import RickAndMorty from '../../assets/RickAndMorty.svg'
 import * as S from './styles'
 import { InputSearch } from "../../components/global/InputSearch";
+import { SelectArrow } from "../../components/global/SelectArrow";
 
 export const Characters = () => {
   return (
@@ -16,6 +17,12 @@ export const Characters = () => {
       <S.FiltersContainer>
         <div className="filter-width">
           <InputSearch placeholder="Filter by name..." />
+        </div>
+        <div className="filter-width">
+          <SelectArrow
+            name="species"
+            options={[{ label: "Species", value: "" }]}
+          />
         </div>
       </S.FiltersContainer>
     </>
