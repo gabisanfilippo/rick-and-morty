@@ -7,6 +7,7 @@ import * as S from './styles'
 import { InputSearch } from "../../components/global/InputSearch";
 import { SelectArrow } from "../../components/global/SelectArrow";
 import { FilterWithModal } from "../../components/FilterWidthModal";
+import { CardCharacter } from "../../components/CardCharacter";
 
 export const Characters = () => {
   return (
@@ -49,6 +50,18 @@ export const Characters = () => {
           </div>
         </S.FiltersMobile>
       )}
+      <S.CardsContainer>
+        <CardCharacter />
+        <CardCharacter />
+        <CardCharacter />
+        <CardCharacter />
+        <CardCharacter />
+        <CardCharacter />
+        <CardCharacter />
+        <CardCharacter />
+        <CardCharacter />
+        <CardCharacter />
+      </S.CardsContainer>
     </>
   );
 }

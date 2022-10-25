@@ -50,3 +50,11 @@ export const FiltersMobile = styled.div`
     width: 90%;
   }
 `;
+
+export const CardsContainer = styled.section`
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 3.813rem 2rem 5rem 2rem;
+`;
