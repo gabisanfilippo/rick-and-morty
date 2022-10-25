@@ -8,6 +8,7 @@ import { InputSearch } from "../../components/global/InputSearch";
 import { SelectArrow } from "../../components/global/SelectArrow";
 import { FilterWithModal } from "../../components/FilterWidthModal";
 import { CardCharacter } from "../../components/CardCharacter";
+import { Footer } from "../../components/global/Footer";
 
 export const Characters = () => {
   return (
@@ -62,6 +63,7 @@ export const Characters = () => {
         <CardCharacter />
         <CardCharacter />
       </S.CardsContainer>
+      <Footer/>
     </>
   );
 }
