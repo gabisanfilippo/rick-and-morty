@@ -8,9 +8,11 @@ export const Container = styled.article`
     0px 2px 4px rgba(0, 0, 0, 0.14);
   border-radius: 4px;
   img {
-    height: 100%;
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
-  .img-container{
+  .img-container {
     width: 100%;
     height: 70%;
     overflow: hidden;
@@ -18,7 +20,7 @@ export const Container = styled.article`
   @media (max-width: 590px) {
     width: 100%;
     height: 20rem;
-    img{
+    img {
       height: auto;
       width: 100%;
     }

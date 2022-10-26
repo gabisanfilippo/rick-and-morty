@@ -58,3 +58,12 @@ export const CardsContainer = styled.section`
   gap: 1rem;
   margin: 3.813rem 2rem 5rem 2rem;
 `;
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  img{
+    height: 8rem;
+  }
+`
