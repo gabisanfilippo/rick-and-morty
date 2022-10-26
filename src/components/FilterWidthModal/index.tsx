@@ -1,10 +1,16 @@
-import React from "react";
+import React, { Dispatch, SetStateAction, FC } from "react";
 import * as S from "./styles";
 import FilterList from "../../assets/FilterList.svg";
 import { useState } from "react";
 import { SelectArrow } from "../global/SelectArrow";
+import { OptionsGender, OptionsStatus } from "../../utils/lists";
 
-export const FilterWithModal = () => {
+interface IProps {
+  setFiltersToURL: Dispatch<SetStateAction<any>>;
+  filtersToURL: any;
+}
+
+export const FilterWithModal: FC<IProps> = ({ setFiltersToURL, filtersToURL }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
@@ -22,16 +28,35 @@ export const FilterWithModal = () => {
             </S.HeaderModal>
             <S.FiltersContainer>
               <SelectArrow
+                onChange={() => {}}
                 name="species"
                 options={[{ label: "Species", value: "" }]}
               />
               <SelectArrow
-                name="species"
-                options={[{ label: "Gender", value: "" }]}
+                onChange={(Event) => {
+                  setFiltersToURL({
+                    ...filtersToURL,
+                    gender: Event.target.value,
+                  });
+                }}
+                defaultValue={filtersToURL.gender}
+                value={filtersToURL.gender}
+                getValue={true}
+                name="gender"
+                options={OptionsGender}
               />
               <SelectArrow
-                name="species"
-                options={[{ label: "Status", value: "" }]}
+                onChange={(Event) => {
+                  setFiltersToURL({
+                    ...filtersToURL,
+                    status: Event.target.value,
+                  });
+                }}
+                defaultValue={filtersToURL.status}
+                value={filtersToURL.status}
+                getValue={true}
+                name="status"
+                options={OptionsStatus}
               />
             </S.FiltersContainer>
             <button onClick={() => setIsModalOpen(false)}>APPLY</button>

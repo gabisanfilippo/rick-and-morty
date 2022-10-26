@@ -15,6 +15,7 @@ import { transformObjectToParams } from "../../utils/transformObjectToParams";
 import { v4 as uuid } from "uuid";
 import RickLoading from "../../assets/RickLoading.gif";
 import RickAndMortyError from "../../assets/RickAndMortyError.png";
+import { OptionsGender, OptionsStatus } from "../../utils/lists";
 
 export const Characters = () => {
   const [filtersToURL, setFiltersToURL] = useState({
@@ -51,20 +52,39 @@ export const Characters = () => {
           </div>
           <div className="filter-width">
             <SelectArrow
+              onChange={() => {}}
               name="species"
               options={[{ label: "Species", value: "" }]}
             />
           </div>
           <div className="filter-width">
             <SelectArrow
-              name="species"
-              options={[{ label: "Gender", value: "" }]}
+              onChange={(Event) => {
+                setFiltersToURL({
+                  ...filtersToURL,
+                  gender: Event.target.value,
+                });
+              }}
+              defaultValue={filtersToURL.gender}
+              value={filtersToURL.gender}
+              getValue={true}
+              name="gender"
+              options={OptionsGender}
             />
           </div>
           <div className="filter-width">
             <SelectArrow
-              name="species"
-              options={[{ label: "Status", value: "" }]}
+              onChange={(Event) => {
+                setFiltersToURL({
+                  ...filtersToURL,
+                  status: Event.target.value,
+                });
+              }}
+              defaultValue={filtersToURL.status}
+              value={filtersToURL.status}
+              getValue={true}
+              name="status"
+              options={OptionsStatus}
             />
           </div>
         </S.FiltersContainer>
@@ -79,7 +99,10 @@ export const Characters = () => {
             />
           </div>
           <div className="filter-width">
-            <FilterWithModal />
+            <FilterWithModal
+              filtersToURL={filtersToURL}
+              setFiltersToURL={setFiltersToURL}
+            />
           </div>
         </S.FiltersMobile>
       )}

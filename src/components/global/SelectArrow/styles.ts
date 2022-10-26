@@ -22,6 +22,7 @@ export const Container = styled.div`
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    cursor: pointer;
   }
   img {
     position: absolute;
