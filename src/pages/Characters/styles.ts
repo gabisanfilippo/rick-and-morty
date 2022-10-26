@@ -67,3 +67,11 @@ export const LoadingContainer = styled.div`
     height: 8rem;
   }
 `
+
+export const Container = styled.div`
+  .pagination{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+`;
