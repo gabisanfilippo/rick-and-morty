@@ -34,18 +34,18 @@ export const SelectArrow: FC<IProps> = ({
     <S.Container>
       <select name={name} onChange={onChange}>
         {options.map((element: { label: string; value: any }) => {
-          return (
-            <option
-              value={element.value}
-              selected={verifyOptionSelected(element, getValue)}
-              key={`Option com nome ${element.label}, valor ${
-                element.value
-              } e id ${uuid()}`}
-            >
-              {element.label}
-            </option>
-          );
-        })}
+            return (
+              <option
+                value={element.value}
+                selected={verifyOptionSelected(element, getValue)}
+                key={`Option com nome ${element.label}, valor ${
+                  element.value
+                } e id ${uuid()}`}
+              >
+                {element.label}
+              </option>
+            );
+          })}
       </select>
       <img src={ArrowDownSelect} alt="Seta para baixo"></img>
     </S.Container>

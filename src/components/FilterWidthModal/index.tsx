@@ -3,7 +3,7 @@ import * as S from "./styles";
 import FilterList from "../../assets/FilterList.svg";
 import { useState } from "react";
 import { SelectArrow } from "../global/SelectArrow";
-import { OptionsGender, OptionsStatus } from "../../utils/lists";
+import { OptionsGender, OptionsSpecies, OptionsStatus } from "../../utils/lists";
 
 interface IProps {
   setFiltersToURL: Dispatch<SetStateAction<any>>;
@@ -28,9 +28,17 @@ export const FilterWithModal: FC<IProps> = ({ setFiltersToURL, filtersToURL }) =
             </S.HeaderModal>
             <S.FiltersContainer>
               <SelectArrow
-                onChange={() => {}}
+                onChange={(Event) => {
+                  setFiltersToURL({
+                    ...filtersToURL,
+                    species: Event.target.value,
+                  });
+                }}
+                defaultValue={filtersToURL.species}
+                value={filtersToURL.species}
+                getValue={true}
                 name="species"
-                options={[{ label: "Species", value: "" }]}
+                options={OptionsSpecies}
               />
               <SelectArrow
                 onChange={(Event) => {

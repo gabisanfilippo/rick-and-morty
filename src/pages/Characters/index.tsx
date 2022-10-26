@@ -15,7 +15,7 @@ import { transformObjectToParams } from "../../utils/transformObjectToParams";
 import { v4 as uuid } from "uuid";
 import RickLoading from "../../assets/RickLoading.gif";
 import RickAndMortyError from "../../assets/RickAndMortyError.png";
-import { OptionsGender, OptionsStatus } from "../../utils/lists";
+import { OptionsGender, OptionsSpecies, OptionsStatus } from "../../utils/lists";
 
 export const Characters = () => {
   const [filtersToURL, setFiltersToURL] = useState({
@@ -52,9 +52,17 @@ export const Characters = () => {
           </div>
           <div className="filter-width">
             <SelectArrow
-              onChange={() => {}}
+              onChange={(Event) => {
+                setFiltersToURL({
+                  ...filtersToURL,
+                  species: Event.target.value,
+                });
+              }}
+              defaultValue={filtersToURL.species}
+              value={filtersToURL.species}
+              getValue={true}
               name="species"
-              options={[{ label: "Species", value: "" }]}
+              options={OptionsSpecies}
             />
           </div>
           <div className="filter-width">
