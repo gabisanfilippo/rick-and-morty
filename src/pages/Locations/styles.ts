@@ -45,7 +45,6 @@ export const LoadingContainer = styled.div`
 `;
 
 export const CardsContainer = styled.section`
-  max-width: 1020px;
   width: 100%;
   padding: 1rem;
   display: flex;

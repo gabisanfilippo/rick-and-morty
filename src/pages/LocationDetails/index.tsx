@@ -37,8 +37,8 @@ export const LocationDetails = () => {
       ) : isErrorLocation ? (
         <S.LoadingContainer>
           <img src={RickAndMortyError} alt="Rick and Morty no Portal" />
-          Oops! It looks like the character have been abducted. Don't worry,
-          we'll rescue them soon!
+          Oops! It seems that we are in a dimension that we cannot see the
+          others! But don't worry, we'll fix it soon.
         </S.LoadingContainer>
       ) : (
         locationInfo && (
@@ -58,11 +58,13 @@ export const LocationDetails = () => {
             </S.Header>
             <S.CardsContainer>
               <p className="p-title">Residents</p>
-                  <S.FlexContainer>{locationInfo.residents.map((element: string) => {
-                    let arraySplit = element.split("/")
-                    let id = arraySplit[5]
-                    return <CardCharacterRequest id={id} />;
-              })}</S.FlexContainer>
+              <S.FlexContainer>
+                {locationInfo.residents.map((element: string) => {
+                  let arraySplit = element.split("/");
+                  let id = arraySplit[5];
+                  return <CardCharacterRequest id={id} />;
+                })}
+              </S.FlexContainer>
             </S.CardsContainer>
           </>
         )

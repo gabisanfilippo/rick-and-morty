@@ -10,7 +10,7 @@ import { FilterWithModal } from "../../components/FilterWidthModal";
 import { CardCharacter } from "../../components/CardCharacter";
 import { Footer } from "../../components/global/Footer";
 import { useGetCharacters } from "../../services/GET/useGetCharacters";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { transformObjectToParams } from "../../utils/transformObjectToParams";
 import { v4 as uuid } from "uuid";
 import RickLoading from "../../assets/RickLoading.gif";
@@ -33,10 +33,7 @@ export const Characters = () => {
 
   const { charactersInfo, isErrorCharacters, isLoadingCharacters } =
     useGetCharacters(url, pagination);
-
-  useEffect(() => {
-    charactersInfo && console.log(charactersInfo);
-  }, [charactersInfo]);
+  
   return (
     <S.Container>
       {useMediaQuery({ minWidth: 450 }) ? <HeaderDesktop /> : <HeaderMobile />}

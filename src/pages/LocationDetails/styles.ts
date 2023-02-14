@@ -78,7 +78,6 @@ export const CardsContainer = styled.section`
   justify-content: center;
   gap: 1rem;
   padding: 1rem;
-  max-width: 1040px;
   margin: auto;
   margin-bottom: 4rem;
   .p-title {
