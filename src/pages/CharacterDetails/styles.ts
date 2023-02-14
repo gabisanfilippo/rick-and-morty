@@ -54,4 +54,13 @@ export const DetailsContainer = styled.section`
     grid-column-gap: 10px;
     width: 50rem;
   }
+  @media (max-width: 855px) {
+    width: 100%;
+    padding: 1rem;
+    .details{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
 `;

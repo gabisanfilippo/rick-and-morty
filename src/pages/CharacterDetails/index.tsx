@@ -4,17 +4,11 @@ import { HeaderMobile } from "../../components/global/HeaderMobile";
 import { FaArrowLeft } from "react-icons/fa";
 import * as S from "./styles";
 import { useNavigate, useParams } from "react-router-dom";
-import { useState } from "react";
-import { transformObjectToParams } from "../../utils/transformObjectToParams";
-import { useGetCharacters } from "../../services/GET/useGetCharacters";
 import RickLoading from "../../assets/RickLoading.gif";
 import RickAndMortyError from "../../assets/RickAndMortyError.png";
-import { Link } from "react-router-dom";
 import { useGetCharacterById } from "../../services/GET/useGetCharacterById";
 import { PhotoCharacter } from "../../components/PhotoCharacter";
 import { CardDetails } from "../../components/CardDetails";
-import { useGetEpisodes } from "../../services/GET/useGetEpisodes";
-import { API } from "../../services/api";
 
 export const CharacterDetails = () => {
   const params = useParams<{ id: any }>();
@@ -22,8 +16,6 @@ export const CharacterDetails = () => {
   const navigate = useNavigate();
   const { characterInfo, isErrorCharacter, isLoadingCharacter } =
     useGetCharacterById(params.id);
-  const { episodesInfo, isErrorEpisodes, isLoadingEpisodes } =
-    useGetEpisodes("");
 
   return (
     <S.Container>
