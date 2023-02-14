@@ -45,7 +45,7 @@ export const ContainerMasterModal = styled.div`
 export const ContainerModal = styled.div`
   position: fixed;
   background-color: var(--white);
-  height: 21.875rem;
+  height: max-content;
   width: 90%;
   z-index: 4;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12),
@@ -70,11 +70,15 @@ export const ContainerModal = styled.div`
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
     border-radius: 4px;
     height: 2.25rem;
+    margin-top: 2rem;
   }
 `;
 
 export const HeaderModal = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
   button {
     padding: 0 0.5rem;
     background-color: transparent;
@@ -85,8 +89,8 @@ export const HeaderModal = styled.div`
     letter-spacing: 0.15px;
     color: var(--black);
     mix-blend-mode: normal;
+    margin: 0;
   }
-  justify-content: space-between;
   * {
     font-style: normal;
     font-weight: 500;

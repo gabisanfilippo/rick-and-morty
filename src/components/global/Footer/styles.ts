@@ -12,6 +12,7 @@ export const Container = styled.footer`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  z-index: 2;
   p {
     font-style: normal;
     font-weight: 700;

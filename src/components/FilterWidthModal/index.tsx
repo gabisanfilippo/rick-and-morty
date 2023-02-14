@@ -8,9 +8,18 @@ import { OptionsGender, OptionsSpecies, OptionsStatus } from "../../utils/lists"
 interface IProps {
   setFiltersToURL: Dispatch<SetStateAction<any>>;
   filtersToURL: any;
+  filtersList: {
+    type: string;
+    name: string;
+    options: { label: string; value: any; }[]
+  }[]
 }
 
-export const FilterWithModal: FC<IProps> = ({ setFiltersToURL, filtersToURL }) => {
+export const FilterWithModal: FC<IProps> = ({
+  setFiltersToURL,
+  filtersToURL,
+  filtersList,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
@@ -27,45 +36,26 @@ export const FilterWithModal: FC<IProps> = ({ setFiltersToURL, filtersToURL }) =
               <button onClick={() => setIsModalOpen(false)}>X</button>
             </S.HeaderModal>
             <S.FiltersContainer>
-              <SelectArrow
-                onChange={(Event) => {
-                  setFiltersToURL({
-                    ...filtersToURL,
-                    species: Event.target.value,
-                  });
-                }}
-                defaultValue={filtersToURL.species}
-                value={filtersToURL.species}
-                getValue={true}
-                name="species"
-                options={OptionsSpecies}
-              />
-              <SelectArrow
-                onChange={(Event) => {
-                  setFiltersToURL({
-                    ...filtersToURL,
-                    gender: Event.target.value,
-                  });
-                }}
-                defaultValue={filtersToURL.gender}
-                value={filtersToURL.gender}
-                getValue={true}
-                name="gender"
-                options={OptionsGender}
-              />
-              <SelectArrow
-                onChange={(Event) => {
-                  setFiltersToURL({
-                    ...filtersToURL,
-                    status: Event.target.value,
-                  });
-                }}
-                defaultValue={filtersToURL.status}
-                value={filtersToURL.status}
-                getValue={true}
-                name="status"
-                options={OptionsStatus}
-              />
+              {filtersList.map((element) => {
+                if (element.type === "select") {
+                  return (
+                  <SelectArrow
+                    onChange={(Event) => {
+                      setFiltersToURL({
+                        ...filtersToURL,
+                        [element.name]: Event.target.value,
+                      });
+                    }}
+                    defaultValue={filtersToURL[element.name]}
+                    value={filtersToURL[element.name]}
+                    getValue={true}
+                    name={element.name}
+                    options={element.options}
+                  />
+                );
+                }
+                
+              })}
             </S.FiltersContainer>
             <button onClick={() => setIsModalOpen(false)}>APPLY</button>
           </S.ContainerModal>

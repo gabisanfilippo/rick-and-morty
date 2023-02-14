@@ -15,7 +15,7 @@ import { transformObjectToParams } from "../../utils/transformObjectToParams";
 import { v4 as uuid } from "uuid";
 import RickLoading from "../../assets/RickLoading.gif";
 import RickAndMortyError from "../../assets/RickAndMortyError.png";
-import { OptionsGender, OptionsSpecies, OptionsStatus } from "../../utils/lists";
+import { filtersCharactersList, OptionsGender, OptionsSpecies, OptionsStatus } from "../../utils/lists";
 import { Pagination } from "../../components/Pagination";
 import { Link } from "react-router-dom";
 
@@ -113,6 +113,7 @@ export const Characters = () => {
             <FilterWithModal
               filtersToURL={filtersToURL}
               setFiltersToURL={setFiltersToURL}
+              filtersList={filtersCharactersList}
             />
           </div>
         </S.FiltersMobile>
