@@ -4,10 +4,12 @@ export const GlobalStyle = createGlobalStyle`
 
   :root{
     --white: #ffffff;
-    --black: #000000;
+    --black: #081f32;
     --grey-placeholder: rgba(0, 0, 0, 0.5);
     --color-one: #e3f2fd;
     --color-two: #2196F3;
+    --color-three: #f2f2f7;
+    --color-four: #8e8e93;
   }
 
   @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');

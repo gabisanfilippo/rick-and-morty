@@ -17,6 +17,7 @@ import RickLoading from "../../assets/RickLoading.gif";
 import RickAndMortyError from "../../assets/RickAndMortyError.png";
 import { OptionsGender, OptionsSpecies, OptionsStatus } from "../../utils/lists";
 import { Pagination } from "../../components/Pagination";
+import { Link } from "react-router-dom";
 
 export const Characters = () => {
   const [filtersToURL, setFiltersToURL] = useState({
@@ -139,12 +140,14 @@ export const Characters = () => {
           charactersInfo &&
           charactersInfo.results.map((element: any) => {
             return (
-              <CardCharacter
-                key={`Personagem ${element.name}, id da api ${
-                  element.id
-                } com id ${uuid()}`}
-                element={element}
-              />
+              <Link to={`/character/${element.id}`}>
+                <CardCharacter
+                  key={`Personagem ${element.name}, id da api ${
+                    element.id
+                  } com id ${uuid()}`}
+                  element={element}
+                />
+              </Link>
             );
           })
         )}
