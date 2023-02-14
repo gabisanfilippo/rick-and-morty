@@ -11,6 +11,10 @@ import { useState, useEffect } from "react";
 import { filtersLocationsList, OptionsDimension, OptionsType } from "../../utils/lists";
 import { transformObjectToParams } from "../../utils/transformObjectToParams";
 import { useGetLocations } from "../../services/GET/useGetLocations";
+import RickLoading from "../../assets/RickLoading.gif";
+import RickAndMortyError from "../../assets/RickAndMortyError.png";
+import { CardLocations } from "../../components/CardLocations";
+import { Pagination } from "../../components/Pagination";
 
 export const Locations = () => {
   const [filtersToURL, setFiltersToURL] = useState({
@@ -18,10 +22,12 @@ export const Locations = () => {
     dimension: '',
     name: ''
   })
+  const [pagination, setPagination] = useState(1);
 
   let url = transformObjectToParams(filtersToURL)
 
-  const { locationsInfo } = useGetLocations(url)
+  const { locationsInfo, isErrorLocations, isLoadingLocations } =
+    useGetLocations(url, pagination);
 
   useEffect(() => {console.log(locationsInfo);}, [locationsInfo]);
   return (
@@ -95,6 +101,32 @@ export const Locations = () => {
               filtersList={filtersLocationsList}
             />
           </S.FiltersMobile>
+        )}
+        <div className="pagination">
+          <Pagination
+            currentPage={pagination}
+            setCurrentPage={setPagination}
+            totalPage={locationsInfo && locationsInfo.info.pages}
+          />
+        </div>
+        {isLoadingLocations ? (
+          <S.LoadingContainer>
+            <img src={RickLoading} alt="Rick`s gif" />
+            Loading...
+          </S.LoadingContainer>
+        ) : isErrorLocations ? (
+          <S.LoadingContainer>
+            <img src={RickAndMortyError} alt="Rick and Morty at Portal" />
+            Oops! It seems that we are in a dimension that we cannot see the
+            others! But don't worry, we'll fix it soon.
+          </S.LoadingContainer>
+        ) : (
+          <S.CardsContainer>
+            {locationsInfo &&
+              locationsInfo.results.map((element: any) => {
+                return <CardLocations info={element} />;
+              })}
+          </S.CardsContainer>
         )}
       </S.FlexColumn>
       <Footer />

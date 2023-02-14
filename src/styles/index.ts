@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     --color-two: #2196F3;
     --color-three: #f2f2f7;
     --color-four: #8e8e93;
+    --color-five: #FAFAFA;
   }
 
   @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
