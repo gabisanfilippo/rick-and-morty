@@ -1,6 +1,4 @@
-import React from 'react'
 import * as S from './styles'
-import RickImage from "../../assets/RickImage.png";
 import { FC } from 'react'
 
 interface IProps {

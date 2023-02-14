@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.article`
   width: 16rem;
-  min-height: 17rem;
-  height: max-content;
+  height: 17rem;
   background-color: var(--white);
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12),
     0px 2px 4px rgba(0, 0, 0, 0.14);
   border-radius: 4px;
+  cursor: pointer;
   img {
     width: 100%;
     border-top-left-radius: 4px;
@@ -49,5 +49,14 @@ export const DescriptionContainer = styled.div`
     letter-spacing: 0.25px;
     color: var(--grey-placeholder);
     mix-blend-mode: normal;
+  }
+`;
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  img {
+    height: 8rem;
   }
 `;

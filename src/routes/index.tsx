@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import React from "react";
 import { CharacterDetails } from "../pages/CharacterDetails";
 import { Locations } from "../pages/Locations";
+import { LocationDetails } from "../pages/LocationDetails";
 
 export const Router = createBrowserRouter([
   {
@@ -16,5 +17,9 @@ export const Router = createBrowserRouter([
   {
     path: "/locations",
     element: <Locations />,
+  },
+  {
+    path: "/locations/:id",
+    element: <LocationDetails />,
   },
 ]);
