@@ -57,7 +57,7 @@ export const LocationDetails = () => {
               </div>
             </S.Header>
             <S.CardsContainer>
-              <p>Residents</p>
+              <p className="p-title">Residents</p>
                   <S.FlexContainer>{locationInfo.residents.map((element: string) => {
                     let arraySplit = element.split("/")
                     let id = arraySplit[5]

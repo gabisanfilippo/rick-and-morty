@@ -59,6 +59,9 @@ export const CharacterDetails = () => {
                 <CardDetails
                   title={"Location"}
                   text={characterInfo.location.name}
+                  onClick={() =>
+                    navigate(`/locations/${characterInfo.location.url.split("/")[5]}`)
+                  }
                 />
               </div>
             </S.DetailsContainer>

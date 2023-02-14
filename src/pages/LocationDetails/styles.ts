@@ -63,6 +63,7 @@ export const Header = styled.section`
       font-size: 0.875rem;
       letter-spacing: 0.25px;
       color: var(--color-six);
+      margin-top: 0.5rem;
     }
   }
   @media (max-width: 515px) {
@@ -73,12 +74,14 @@ export const Header = styled.section`
 export const CardsContainer = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
   padding: 1rem;
   max-width: 1040px;
   margin: auto;
   margin-bottom: 4rem;
-  p {
+  .p-title {
     font-style: normal;
     font-weight: 500;
     font-size: 1.25rem;
@@ -86,6 +89,8 @@ export const CardsContainer = styled.section`
     align-items: center;
     letter-spacing: 0.15px;
     color: var(--color-four);
+    text-align: center;
+    margin: auto;
   }
 `;
 

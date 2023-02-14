@@ -5,11 +5,15 @@ import { IoIosArrowForward } from 'react-icons/io';
 interface IProps {
   title: string;
   text: string;
+  onClick?: () => void;
 }
 
-export const CardDetails: FC<IProps> = ({ title, text }) => {
+export const CardDetails: FC<IProps> = ({ title, text, onClick }) => {
   return (
-    <S.Container cursor={title === "Location" ? 'pointer' : 'default'}>
+    <S.Container
+      cursor={title === "Location" ? "pointer" : "default"}
+      onClick={onClick}
+    >
       <div>
         <h3>{title}</h3>
         <p>{text}</p>
