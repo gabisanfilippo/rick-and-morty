@@ -15,6 +15,7 @@ export const Container = styled.header`
 export const MenuContainer = styled.div`
   display: flex;
   gap: 1.5rem;
+  cursor: pointer;
   p {
     font-style: normal;
     font-weight: 700;

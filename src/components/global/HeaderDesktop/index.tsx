@@ -22,7 +22,13 @@ export const HeaderDesktop = () => {
         >
           Locations
         </p>
-        <p>Episodes</p>
+        <p
+          onClick={() => {
+            navigate("/episodes");
+          }}
+        >
+          Episodes
+        </p>
       </S.MenuContainer>
     </S.Container>
   );
