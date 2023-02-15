@@ -55,7 +55,7 @@ export const EpisodeDetails = () => {
               </div>
             </S.Header>
             <S.CardsContainer>
-              <p className="p-title">Residents</p>
+              <p className="p-title">Cast</p>
               <S.FlexContainer>
                 {episodeInfo.characters.map((element: string) => {
                   let arraySplit = element.split("/");
