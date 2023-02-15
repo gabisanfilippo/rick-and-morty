@@ -27,6 +27,7 @@ export const CardsContainer = styled.section`
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;
+  justify-content: center;
 `
 
 export const LoadingContainer = styled.div`

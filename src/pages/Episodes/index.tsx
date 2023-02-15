@@ -6,7 +6,7 @@ import RickWideningMortysEyes from '../../assets/RickWideningMortysEyes.svg'
 import * as S from "./styles"
 import { InputSearch } from "../../components/global/InputSearch";
 import { Pagination } from "../../components/Pagination";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { transformObjectToParams } from "../../utils/transformObjectToParams";
 import { useGetEpisodes } from "../../services/GET/useGetEpisodes";
 import RickLoading from "../../assets/RickLoading.gif";
@@ -21,6 +21,9 @@ export const Episodes = () => {
   let url = transformObjectToParams(filtersToURL)
 
   const { episodesInfo, isErrorEpisodes, isLoadingEpisodes } = useGetEpisodes(url, pagination)
+
+  useEffect(() => {console.log(episodesInfo);
+  }, [episodesInfo]);
   return (
     <S.Container>
       {useMediaQuery({ minWidth: 450 }) ? <HeaderDesktop /> : <HeaderMobile />}
@@ -57,12 +60,16 @@ export const Episodes = () => {
             search all galaxies.
           </S.LoadingContainer>
         ) : (
-          episodesInfo &&
-          episodesInfo.results.map((element: any) => {
-            return <Link to={`/episodes/${element.id}`}>
-              <CardEpisodes />
-            </Link>;
-          })
+          <S.CardsContainer>
+            {episodesInfo &&
+              episodesInfo.results.map((element: any) => {
+                return (
+                  <Link to={`/episodes/${element.id}`}>
+                    <CardEpisodes info={element} />
+                  </Link>
+                );
+              })}
+          </S.CardsContainer>
         )}
       </S.CardsContainer>
       <Footer />
