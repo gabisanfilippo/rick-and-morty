@@ -29,7 +29,6 @@ export const Locations = () => {
   const { locationsInfo, isErrorLocations, isLoadingLocations } =
     useGetLocations(url, pagination);
 
-  useEffect(() => {console.log(locationsInfo);}, [locationsInfo]);
   return (
     <>
       {useMediaQuery({ minWidth: 450 }) ? <HeaderDesktop /> : <HeaderMobile />}

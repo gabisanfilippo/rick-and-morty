@@ -22,8 +22,6 @@ export const Episodes = () => {
 
   const { episodesInfo, isErrorEpisodes, isLoadingEpisodes } = useGetEpisodes(url, pagination)
 
-  useEffect(() => {console.log(episodesInfo);
-  }, [episodesInfo]);
   return (
     <S.Container>
       {useMediaQuery({ minWidth: 450 }) ? <HeaderDesktop /> : <HeaderMobile />}
