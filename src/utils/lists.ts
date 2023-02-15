@@ -20,7 +20,7 @@ async function getSpecies() {
 
 async function getTypes() {
   try {
-    const { data } = await API.get(`https://rickandmortyapi.com/api/locations`);
+    const { data } = await API.get(`https://rickandmortyapi.com/api/location`);
     const dataOnlyTypes = data.results.map((element: any) => {
       return element.type
     })
@@ -37,7 +37,7 @@ async function getTypes() {
 
 async function getDimension() {
   try {
-    const { data } = await API.get(`https://rickandmortyapi.com/api/locations`);
+    const { data } = await API.get(`https://rickandmortyapi.com/api/location`);
     const dataOnlyTypes = data.results.map((element: any) => {
       return element.dimension;
     });
