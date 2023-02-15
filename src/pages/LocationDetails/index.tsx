@@ -7,7 +7,6 @@ import { useGetLocationById } from "../../services/GET/useGetLocationById";
 import RickLoading from "../../assets/RickLoading.gif";
 import RickAndMortyError from "../../assets/RickAndMortyError.png";
 import * as S from './styles'
-import { useEffect } from "react";
 import { CardCharacterRequest } from "../../components/CardCharacterRequest";
 import { Footer } from "../../components/global/Footer";
 
@@ -17,7 +16,6 @@ export const LocationDetails = () => {
   const navigate = useNavigate();
   const { locationInfo, isErrorLocation, isLoadingLocation } = useGetLocationById(params.id);
 
-  useEffect(() => {console.log(locationInfo);}, [locationInfo]);
   return (
     <S.Container>
       {useMediaQuery({ minWidth: 450 }) ? <HeaderDesktop /> : <HeaderMobile />}
