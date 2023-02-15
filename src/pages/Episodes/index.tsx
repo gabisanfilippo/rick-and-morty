@@ -6,7 +6,7 @@ import RickWideningMortysEyes from '../../assets/RickWideningMortysEyes.svg'
 import * as S from "./styles"
 import { InputSearch } from "../../components/global/InputSearch";
 import { Pagination } from "../../components/Pagination";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { transformObjectToParams } from "../../utils/transformObjectToParams";
 import { useGetEpisodes } from "../../services/GET/useGetEpisodes";
 import RickLoading from "../../assets/RickLoading.gif";

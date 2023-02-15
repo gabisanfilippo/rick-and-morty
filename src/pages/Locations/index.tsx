@@ -7,7 +7,7 @@ import * as S from "./styles";
 import { InputSearch } from "../../components/global/InputSearch";
 import { SelectArrow } from "../../components/global/SelectArrow";
 import { FilterWithModal } from "../../components/FilterWidthModal";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { filtersLocationsList, OptionsDimension, OptionsType } from "../../utils/lists";
 import { transformObjectToParams } from "../../utils/transformObjectToParams";
 import { useGetLocations } from "../../services/GET/useGetLocations";
