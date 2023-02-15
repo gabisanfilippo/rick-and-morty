@@ -28,6 +28,7 @@ export const CardsContainer = styled.section`
   gap: 1rem;
   padding: 1rem;
   justify-content: center;
+  margin-bottom: 2rem;
 `
 
 export const LoadingContainer = styled.div`
