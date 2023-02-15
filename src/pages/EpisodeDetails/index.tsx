@@ -1,19 +1,21 @@
-import { FaArrowLeft } from 'react-icons/fa';
-import { useMediaQuery } from 'react-responsive';
-import { useNavigate, useParams } from 'react-router-dom';
-import { CardCharacterRequest } from '../../components/CardCharacterRequest';
-import { Footer } from '../../components/global/Footer';
-import { HeaderDesktop } from '../../components/global/HeaderDesktop';
-import { HeaderMobile } from '../../components/global/HeaderMobile';
-import { useGetEpisodeById } from '../../services/GET/useGetEpisodeById';
-import * as S from './styles'
+import { FaArrowLeft } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
+import { useNavigate, useParams } from "react-router-dom";
+import { CardCharacterRequest } from "../../components/CardCharacterRequest";
+import { Footer } from "../../components/global/Footer";
+import { HeaderDesktop } from "../../components/global/HeaderDesktop";
+import { HeaderMobile } from "../../components/global/HeaderMobile";
+import { useGetEpisodeById } from "../../services/GET/useGetEpisodeById";
+import * as S from "./styles";
 import RickLoading from "../../assets/RickLoading.gif";
 import RickAndMortyError from "../../assets/RickAndMortyError.png";
 
 export const EpisodeDetails = () => {
   const params = useParams<{ id: any }>();
   const navigate = useNavigate();
-  const { episodeInfo, isErrorEpisode, isLoadingEpisode } = useGetEpisodeById(params.id)
+  const { episodeInfo, isErrorEpisode, isLoadingEpisode } = useGetEpisodeById(
+    params.id
+  );
   return (
     <S.Container>
       {useMediaQuery({ minWidth: 450 }) ? <HeaderDesktop /> : <HeaderMobile />}
@@ -58,7 +60,12 @@ export const EpisodeDetails = () => {
                 {episodeInfo.characters.map((element: string) => {
                   let arraySplit = element.split("/");
                   let id = arraySplit[5];
-                  return <CardCharacterRequest id={id} />;
+                  return (
+                    <CardCharacterRequest
+                      key={`Character Card with id ${id} and url ${element}`}
+                      id={id}
+                    />
+                  );
                 })}
               </S.FlexContainer>
             </S.CardsContainer>
@@ -68,4 +75,4 @@ export const EpisodeDetails = () => {
       <Footer />
     </S.Container>
   );
-}
+};

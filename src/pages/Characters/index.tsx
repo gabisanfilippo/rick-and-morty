@@ -15,7 +15,12 @@ import { transformObjectToParams } from "../../utils/transformObjectToParams";
 import { v4 as uuid } from "uuid";
 import RickLoading from "../../assets/RickLoading.gif";
 import RickAndMortyError from "../../assets/RickAndMortyError.png";
-import { filtersCharactersList, OptionsGender, OptionsSpecies, OptionsStatus } from "../../utils/lists";
+import {
+  filtersCharactersList,
+  OptionsGender,
+  OptionsSpecies,
+  OptionsStatus,
+} from "../../utils/lists";
 import { Pagination } from "../../components/Pagination";
 import { Link } from "react-router-dom";
 
@@ -27,13 +32,13 @@ export const Characters = () => {
     type: "",
     gender: "",
   });
-  const [pagination, setPagination] = useState(1)
+  const [pagination, setPagination] = useState(1);
 
   let url = transformObjectToParams(filtersToURL);
 
   const { charactersInfo, isErrorCharacters, isLoadingCharacters } =
     useGetCharacters(url, pagination);
-  
+
   return (
     <S.Container>
       {useMediaQuery({ minWidth: 450 }) ? <HeaderDesktop /> : <HeaderMobile />}
@@ -138,13 +143,13 @@ export const Characters = () => {
           charactersInfo &&
           charactersInfo.results.map((element: any) => {
             return (
-              <Link to={`/character/${element.id}`}>
-                <CardCharacter
-                  key={`Personagem ${element.name}, id da api ${
-                    element.id
-                  } com id ${uuid()}`}
-                  element={element}
-                />
+              <Link
+                to={`/character/${element.id}`}
+                key={`Personagem ${element.name}, id da api ${
+                  element.id
+                } com id ${uuid()}`}
+              >
+                <CardCharacter element={element} />
               </Link>
             );
           })

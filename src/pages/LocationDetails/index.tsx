@@ -6,7 +6,7 @@ import { HeaderMobile } from "../../components/global/HeaderMobile";
 import { useGetLocationById } from "../../services/GET/useGetLocationById";
 import RickLoading from "../../assets/RickLoading.gif";
 import RickAndMortyError from "../../assets/RickAndMortyError.png";
-import * as S from './styles'
+import * as S from "./styles";
 import { CardCharacterRequest } from "../../components/CardCharacterRequest";
 import { Footer } from "../../components/global/Footer";
 
@@ -14,7 +14,8 @@ export const LocationDetails = () => {
   const params = useParams<{ id: any }>();
 
   const navigate = useNavigate();
-  const { locationInfo, isErrorLocation, isLoadingLocation } = useGetLocationById(params.id);
+  const { locationInfo, isErrorLocation, isLoadingLocation } =
+    useGetLocationById(params.id);
 
   return (
     <S.Container>
@@ -60,7 +61,12 @@ export const LocationDetails = () => {
                 {locationInfo.residents.map((element: string) => {
                   let arraySplit = element.split("/");
                   let id = arraySplit[5];
-                  return <CardCharacterRequest id={id} />;
+                  return (
+                    <CardCharacterRequest
+                      key={`Character Card with id ${id} and url ${element}`}
+                      id={id}
+                    />
+                  );
                 })}
               </S.FlexContainer>
             </S.CardsContainer>
@@ -70,4 +76,4 @@ export const LocationDetails = () => {
       <Footer />
     </S.Container>
   );
-}
+};

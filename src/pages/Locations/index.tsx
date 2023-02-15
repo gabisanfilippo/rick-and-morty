@@ -8,7 +8,11 @@ import { InputSearch } from "../../components/global/InputSearch";
 import { SelectArrow } from "../../components/global/SelectArrow";
 import { FilterWithModal } from "../../components/FilterWidthModal";
 import { useState } from "react";
-import { filtersLocationsList, OptionsDimension, OptionsType } from "../../utils/lists";
+import {
+  filtersLocationsList,
+  OptionsDimension,
+  OptionsType,
+} from "../../utils/lists";
 import { transformObjectToParams } from "../../utils/transformObjectToParams";
 import { useGetLocations } from "../../services/GET/useGetLocations";
 import RickLoading from "../../assets/RickLoading.gif";
@@ -18,13 +22,13 @@ import { Pagination } from "../../components/Pagination";
 
 export const Locations = () => {
   const [filtersToURL, setFiltersToURL] = useState({
-    type: '',
-    dimension: '',
-    name: ''
-  })
+    type: "",
+    dimension: "",
+    name: "",
+  });
   const [pagination, setPagination] = useState(1);
 
-  let url = transformObjectToParams(filtersToURL)
+  let url = transformObjectToParams(filtersToURL);
 
   const { locationsInfo, isErrorLocations, isLoadingLocations } =
     useGetLocations(url, pagination);
@@ -123,7 +127,12 @@ export const Locations = () => {
           <S.CardsContainer>
             {locationsInfo &&
               locationsInfo.results.map((element: any) => {
-                return <CardLocations info={element} />;
+                return (
+                  <CardLocations
+                    info={element}
+                    key={`Card Locations with id ${element.id} and name ${element.name}`}
+                  />
+                );
               })}
           </S.CardsContainer>
         )}

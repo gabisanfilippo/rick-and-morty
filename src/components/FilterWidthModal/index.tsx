@@ -1,9 +1,8 @@
-import React, { Dispatch, SetStateAction, FC } from "react";
+import { Dispatch, SetStateAction, FC } from "react";
 import * as S from "./styles";
 import FilterList from "../../assets/FilterList.svg";
 import { useState } from "react";
 import { SelectArrow } from "../global/SelectArrow";
-import { OptionsGender, OptionsSpecies, OptionsStatus } from "../../utils/lists";
 
 interface IProps {
   setFiltersToURL: Dispatch<SetStateAction<any>>;
@@ -11,8 +10,8 @@ interface IProps {
   filtersList: {
     type: string;
     name: string;
-    options: { label: string; value: any; }[]
-  }[]
+    options: { label: string; value: any }[];
+  }[];
 }
 
 export const FilterWithModal: FC<IProps> = ({
@@ -39,22 +38,23 @@ export const FilterWithModal: FC<IProps> = ({
               {filtersList.map((element) => {
                 if (element.type === "select") {
                   return (
-                  <SelectArrow
-                    onChange={(Event) => {
-                      setFiltersToURL({
-                        ...filtersToURL,
-                        [element.name]: Event.target.value,
-                      });
-                    }}
-                    defaultValue={filtersToURL[element.name]}
-                    value={filtersToURL[element.name]}
-                    getValue={true}
-                    name={element.name}
-                    options={element.options}
-                  />
-                );
+                    <SelectArrow
+                      key={element.name + element.type}
+                      onChange={(Event) => {
+                        setFiltersToURL({
+                          ...filtersToURL,
+                          [element.name]: Event.target.value,
+                        });
+                      }}
+                      defaultValue={filtersToURL[element.name]}
+                      value={filtersToURL[element.name]}
+                      getValue={true}
+                      name={element.name}
+                      options={element.options}
+                    />
+                  );
                 }
-                
+                return null;
               })}
             </S.FiltersContainer>
             <button onClick={() => setIsModalOpen(false)}>APPLY</button>

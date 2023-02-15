@@ -2,8 +2,8 @@ import { useMediaQuery } from "react-responsive";
 import { Footer } from "../../components/global/Footer";
 import { HeaderDesktop } from "../../components/global/HeaderDesktop";
 import { HeaderMobile } from "../../components/global/HeaderMobile";
-import RickWideningMortysEyes from '../../assets/RickWideningMortysEyes.svg'
-import * as S from "./styles"
+import RickWideningMortysEyes from "../../assets/RickWideningMortysEyes.svg";
+import * as S from "./styles";
 import { InputSearch } from "../../components/global/InputSearch";
 import { Pagination } from "../../components/Pagination";
 import { useState } from "react";
@@ -16,11 +16,14 @@ import { CardEpisodes } from "../../components/CardEpisodes";
 
 export const Episodes = () => {
   const [pagination, setPagination] = useState(1);
-  const [filtersToURL, setFiltersToURL] = useState({ name: '' })
-  
-  let url = transformObjectToParams(filtersToURL)
+  const [filtersToURL, setFiltersToURL] = useState({ name: "" });
 
-  const { episodesInfo, isErrorEpisodes, isLoadingEpisodes } = useGetEpisodes(url, pagination)
+  let url = transformObjectToParams(filtersToURL);
+
+  const { episodesInfo, isErrorEpisodes, isLoadingEpisodes } = useGetEpisodes(
+    url,
+    pagination
+  );
 
   return (
     <S.Container>
@@ -62,7 +65,10 @@ export const Episodes = () => {
             {episodesInfo &&
               episodesInfo.results.map((element: any) => {
                 return (
-                  <Link to={`/episodes/${element.id}`}>
+                  <Link
+                    to={`/episodes/${element.id}`}
+                    key={`Card episodes with id ${element.id} and name ${element.name}`}
+                  >
                     <CardEpisodes info={element} />
                   </Link>
                 );
@@ -73,4 +79,4 @@ export const Episodes = () => {
       <Footer />
     </S.Container>
   );
-}
+};
