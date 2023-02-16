@@ -2,7 +2,7 @@
 
 This is a responsive web application built with ReactJs, Jotai, Styled-components, React-Query, and Typescript. It uses the [Rick and Morty API](https://rickandmortyapi.com/) to display data about characters, locations, and episodes from the popular TV show.
 
-![Rick and Morty Page](./public/rick-and-morty-screen.jpg)
+![Rick and Morty Page](./public/rick-and-morty-screen.png)
 
 The website has the following pages:
 - **Characters page:** displays all characters in card format. Clicking on a card takes you to a page that provides more information about the character, such as their location. The character list page has filters to search by name, filter by species, gender, and status (alive or dead).
