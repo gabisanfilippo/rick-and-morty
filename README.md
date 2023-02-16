@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Rick and Morty Wiki
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a responsive web application built with ReactJs, Jotai, Styled-components, React-Query, and Typescript. It uses the [Rick and Morty API](https://rickandmortyapi.com/) to display data about characters, locations, and episodes from the popular TV show.
 
-## Available Scripts
+The website has the following pages:
+- **Characters page:** displays all characters in card format. Clicking on a card takes you to a page that provides more information about the character, such as their location. The character list page has filters to search by name, filter by species, gender, and status (alive or dead).
+- **Character details page:** displays more information about a selected character, such as their location, and episodes they appear in. Clicking on the location takes you to a location details page. Clicking on an episode takes you to the episode details page. 
+- **Locations page:** lists locations in card format. Clicking on a card opens the location details, which also lists the residents of that location. The location page has filters to search by name, filter by type, and dimension.
+- **Location details page:** displays more information about a selected location, such as its residents and the episodes that take place there. Clicking on a resident (character) takes you to the character details page.
+- **Episodes page:** lists episodes in card format. Clicking on a card takes you to the episode details page, which also lists the characters that appear in the selected episode. The episode page can only be searched by name.
+- **Episode details page:** displays more information about a selected episode, such as the characters that appear in it. Clicking on a character takes you to the character details page.
 
-In the project directory, you can run:
+## Getting started
 
-### `npm start`
+To run this project on your local machine, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Clone this repository: `git clone https://github.com/<username>/<repository>.git`
+2. Navigate to the project directory: `cd rick-and-morty`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Open your browser and go to `http://localhost:3000`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies used
 
-### `npm test`
+This project was built with the following technologies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [ReactJs](https://reactjs.org/)
+- [Jotai](https://github.com/pmndrs/jotai)
+- [Styled-components](https://styled-components.com/)
+- [React-Query](https://react-query.tanstack.com/)
+- [Typescript](https://www.typescriptlang.org/)
 
-### `npm run build`
+## Credits
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Rick and Morty API](https://rickandmortyapi.com/) for providing the data used in this project.
+- [React Icons](https://react-icons.github.io/react-icons/) for providing the icons used in this project.
+- [Vercel](https://vercel.com/) for hosting the website.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## License
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
