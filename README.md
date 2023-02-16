@@ -14,7 +14,7 @@ The website has the following pages:
 
 To run this project on your local machine, follow these steps:
 
-1. Clone this repository: `git clone https://github.com/<username>/<repository>.git`
+1. Clone this repository: `git clone https://github.com/gabisanfilippo/rick-and-morty.git`
 2. Navigate to the project directory: `cd rick-and-morty`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
